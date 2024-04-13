@@ -83,7 +83,10 @@ else:
 
             # Reading the uploaded files
             prompt_template = uploaded_prompt_file.getvalue().decode("utf-8")
-            prompt_template += "\n + Be as detailed as possible for every heading. Here is the outline for the blog: + \n\n {outline}"
+            prompt_template += """\n + 
+                    Here is the outline for the blog. Based on the outline and the above instructions, write a blog. 
+                    Make all the sections as detailed as possible. AIm for around 2500 words in total.: 
+                    + \n\n {outline}"""
 
             with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as tmp_outline:
                 tmp_outline.write(uploaded_outline_file.getvalue())
