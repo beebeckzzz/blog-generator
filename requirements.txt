@@ -1,4 +1,4 @@
-flask
+streamlit
 langchain
 langchain-community 
 langchain-core 
