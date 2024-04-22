@@ -27,7 +27,7 @@ if option == "Generate Outline":
     uploaded_outline_file = st.file_uploader("**Upload outline notes:**", type="txt")
 
     # Submit button
-    if st.button("Generate Blog"):
+    if st.button("Generate Outline"):
 
         if uploaded_prompt_file is not None and uploaded_outline_file is not None:
 
