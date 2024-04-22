@@ -60,7 +60,7 @@ if option == "Generate Outline":
 
             # Download button for the generated text
             result_bytes = io.BytesIO(result.encode("utf-8"))
-            st.download_button(label="Download Generated Blog",
+            st.download_button(label="Download Generated Outline",
                                data=result_bytes,
                                file_name=f"outline_{outline_filename}.txt",
                                mime="text/plain")
