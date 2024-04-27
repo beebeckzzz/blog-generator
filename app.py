@@ -33,7 +33,7 @@ if option == "Generate Outline":
 
             # Reading the uploaded files
             prompt_template = uploaded_prompt_file.getvalue().decode("utf-8")
-            prompt_template += "\n + Here is the content to reference in order to generate the blog outline : + \n\n {content}"
+            prompt_template += "\n + Here is the content to reference in order to generate the outline : + \n\n {content}"
 
             with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as tmp_outline:
                 tmp_outline.write(uploaded_outline_file.getvalue())
@@ -84,7 +84,7 @@ else:
             # Reading the uploaded files
             prompt_template = uploaded_prompt_file.getvalue().decode("utf-8")
             prompt_template += """\n + 
-                    Here is the outline for the blog. Based on the outline and the above instructions, write a blog. 
+                    Here is the outline. Based on the outline and the above instructions, write the content based on above instructions. 
                     Make all the sections as detailed as possible. AIm for around 2500 words in total.: 
                     + \n\n {outline}"""
 
