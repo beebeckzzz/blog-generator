@@ -1,4 +1,9 @@
 streamlit
+PyPDF2
+openpyxl
+unstructured
+networkx
+pandas
 langchain
 langchain-community 
 langchain-core 
