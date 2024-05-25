@@ -38,7 +38,7 @@ def process_uploaded_outline_file(uploaded_file):
             filename = os.path.splitext(os.path.basename(uploaded_file.name))[0]
         loader = TextLoader(tmp_file_path)
         docs = loader.load()
-    # change this such that it accepts both xlsx and xls
+    
     elif file_extension == ".xls" or file_extension == ".xlsx":
         # Read the uploaded file into a pandas DataFrame
         xlsx_data = uploaded_file.read()
@@ -91,8 +91,6 @@ if option == "Generate Outline":
 
                 # Initialize the LLM and chains with the uploaded files and API key
                 llm = ChatAnthropic(temperature=0, anthropic_api_key=api_key, model_name="claude-3-opus-20240229", max_tokens=4096)
-                # llm = ChatOllama(temperature=0, model="llama3", max_tokens=4096)
-                # llm = ChatGroq(temperature=0, model="Llama3-70b-8192", max_tokens=4096, api_key="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")
                 llm_chain = LLMChain(llm=llm, prompt=blog_prompt)
 
                 # Configure the StuffDocumentsChain
@@ -139,9 +137,6 @@ else:
 
                 # Initialize the LLM and chains with the uploaded files and API key
                 llm = ChatAnthropic(temperature=0, anthropic_api_key=api_key, model_name="claude-3-opus-20240229", max_tokens=4096)
-                # llm = ChatOllama(temperature=0, model="llama3", max_tokens=4096)
-                # llm = ChatGroq(temperature=0, model="Llama3-70b-8192", max_tokens=4096, api_key="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")
-
                 llm_chain = LLMChain(llm=llm, prompt=blog_prompt)
 
                 # Configure the StuffDocumentsChain
